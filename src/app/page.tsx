@@ -1,102 +1,262 @@
 import Image from "next/image";
 
+const clientLogos = [
+  "/logo1.svg",
+  "/logo2.svg",
+  "/logo3.svg",
+  "/logo4.svg",
+  "/logo5.svg",
+];
+
+const caseStudies = [
+  {
+    title: "E-Commerce Growth",
+    result: "+400% ROAS in 3 months",
+    description: "Scaled a local retailer with Google Ads & CRO.",
+    image: "/case1.jpg",
+  },
+  {
+    title: "SaaS Lead Gen",
+    result: "Tripled qualified leads",
+    description: "Full-funnel strategy for a NZ SaaS company.",
+    image: "/case2.jpg",
+  },
+  {
+    title: "Brand Awareness",
+    result: "+200% new customers",
+    description: "Creative social campaigns for a hospitality group.",
+    image: "/case3.jpg",
+  },
+];
+
+const blogPosts = [
+  {
+    title: "How to Scale Google Ads in 2025",
+    excerpt: "Our expert tips for NZ brands looking to grow with paid search.",
+    image: "/blog1.jpg",
+    link: "#",
+  },
+  {
+    title: "Social Media Trends in Auckland",
+    excerpt: "What’s working now for local businesses on Instagram & Facebook.",
+    image: "/blog2.jpg",
+    link: "#",
+  },
+];
+
+const faqs = [
+  {
+    q: "How quickly can I see results?",
+    a: "Most clients see positive ROI within the first 30-60 days, depending on campaign type and goals.",
+  },
+  {
+    q: "Do you work with small businesses?",
+    a: "Absolutely! We tailor strategies for both startups and established brands across New Zealand.",
+  },
+  {
+    q: "What platforms do you specialize in?",
+    a: "Google Ads, YouTube, Facebook, Instagram, LinkedIn, and more.",
+  },
+  {
+    q: "Is there a minimum contract?",
+    a: "We offer flexible month-to-month engagements to suit your needs.",
+  },
+];
+
+const socials = [
+  { href: "https://www.linkedin.com/", icon: "/linkedin.svg", label: "LinkedIn" },
+  { href: "https://www.instagram.com/", icon: "/instagram.svg", label: "Instagram" },
+  { href: "https://twitter.com/", icon: "/twitter.svg", label: "Twitter" },
+];
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-white to-sky-50 text-gray-900 flex flex-col font-[family-name:var(--font-geist-sans)]">
+      {/* Sticky Navbar */}
+      <nav className="sticky top-0 z-30 bg-white/80 backdrop-blur shadow-sm flex justify-center gap-8 py-4 px-6 text-blue-900 font-semibold text-sm animate-fade-in-down">
+        <a href="#services" className="hover:text-blue-600 transition">Services</a>
+        <a href="#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
+        <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
+        <a href="#about" className="hover:text-blue-600 transition">About</a>
+        <a href="#blog" className="hover:text-blue-600 transition">Blog</a>
+        <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-sky-100 to-blue-300 animate-fade-in">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-900 drop-shadow-lg">Tiberius Digital Marketing</h1>
+        <h2 className="text-xl sm:text-2xl font-medium text-blue-700 mb-6">Auckland’s Premier Growth Agency for Ambitious Brands</h2>
+        <p className="max-w-xl mx-auto mb-8 text-gray-700">Unlock your brand’s full potential with Tiberius – the digital marketing partner trusted by New Zealand’s fastest-growing businesses. We deliver data-driven campaigns, creative strategies, and measurable results.</p>
+        <a href="#contact" className="inline-block px-8 py-3 bg-blue-700 text-white rounded-full font-semibold shadow-lg hover:bg-blue-900 transition">Book a Free Strategy Call</a>
+      </section>
+
+      {/* Brands We’ve Helped */}
+      <section className="py-8 px-4 bg-white animate-fade-in-up" id="brands">
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          <span className="uppercase text-xs text-gray-500 tracking-widest mb-2">Brands We’ve Helped</span>
+          <div className="flex flex-wrap justify-center gap-8 items-center opacity-80">
+            {clientLogos.map((logo, i) => (
+              <Image key={i} src={logo} alt="Client logo" width={100} height={40} className="object-contain grayscale hover:grayscale-0 transition" />
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+
+      {/* Services Section */}
+      <section className="py-20 px-4 bg-white" id="services">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Our Services</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-800">Google & YouTube Ads</h4>
+              <p className="text-gray-700">Expert campaign management, optimization, and scaling for maximum ROI. We make every dollar count.</p>
+            </div>
+            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-800">Social Media Marketing</h4>
+              <p className="text-gray-700">Grow your brand with creative, targeted campaigns on Facebook, Instagram, LinkedIn, and more.</p>
+            </div>
+            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-800">Conversion Rate Optimization</h4>
+              <p className="text-gray-700">Turn more visitors into customers with data-driven landing pages and funnel strategies.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-20 px-4 bg-blue-50 animate-fade-in-up" id="case-studies">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Case Studies</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {caseStudies.map((cs, i) => (
+              <div key={i} className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6">
+                <Image src={cs.image} alt={cs.title} width={240} height={140} className="rounded mb-4 object-cover" />
+                <h4 className="font-semibold text-lg mb-2 text-blue-800">{cs.title}</h4>
+                <span className="text-sky-700 font-bold mb-1">{cs.result}</span>
+                <p className="text-gray-700 text-sm">{cs.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-white animate-fade-in-up" id="faq">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Frequently Asked Questions</h3>
+          <div className="divide-y divide-blue-100">
+            {faqs.map((faq, i) => (
+              <div key={i} className="py-4">
+                <div className="font-semibold text-blue-800 mb-1">Q: {faq.q}</div>
+                <div className="text-gray-700">A: {faq.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup Section */}
+      <section className="py-16 px-4 bg-sky-100 animate-fade-in-up" id="newsletter">
+        <div className="max-w-xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-4 text-blue-900">Subscribe to Our Newsletter</h3>
+          <p className="mb-6 text-gray-700">Get the latest marketing tips, case studies, and news from Tiberius – straight to your inbox.</p>
+          <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <input type="email" placeholder="Your Email" className="px-4 py-3 rounded w-full max-w-xs" required />
+            <button type="submit" className="px-6 py-3 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-900 transition">Subscribe</button>
+          </form>
+        </div>
+      </section>
+
+      {/* Blog Preview Section */}
+      <section className="py-20 px-4 bg-blue-50 animate-fade-in-up" id="blog">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">From Our Blog</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {blogPosts.map((post, i) => (
+              <a key={i} href={post.link} className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6 group">
+                <Image src={post.image} alt={post.title} width={320} height={160} className="rounded mb-4 object-cover group-hover:scale-105 transition-transform" />
+                <h4 className="font-semibold text-lg mb-2 text-blue-800 group-hover:text-blue-900 transition">{post.title}</h4>
+                <p className="text-gray-700 text-sm">{post.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-blue-50" id="testimonials">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">What Our Clients Say</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+              <p className="mb-2">“Tiberius helped us scale our e-commerce brand in months. Their Google Ads expertise is unmatched!”</p>
+              <footer className="text-blue-800 font-semibold">– Sarah, Auckland Retailer</footer>
+            </blockquote>
+            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+              <p className="mb-2">“The Tiberius team delivers results and communicates every step. We saw a 5x ROAS within weeks.”</p>
+              <footer className="text-blue-800 font-semibold">– James, NZ SaaS Founder</footer>
+            </blockquote>
+            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+              <p className="mb-2">“Our brand awareness in Auckland exploded thanks to Tiberius’ creative campaigns.”</p>
+              <footer className="text-blue-800 font-semibold">– Priya, Local Business Owner</footer>
+            </blockquote>
+            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+              <p className="mb-2">“Professional, proactive, and always on point. Highly recommended for NZ businesses.”</p>
+              <footer className="text-blue-800 font-semibold">– Matt, E-commerce Director</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-4 bg-white" id="about">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <h3 className="text-3xl font-bold mb-4 text-blue-900">Who We Are</h3>
+            <p className="text-gray-700 mb-4">Tiberius is a results-driven digital marketing agency based in Auckland, New Zealand. Our team brings years of experience across e-commerce, SaaS, and local business growth. We don’t believe in cookie-cutter solutions – every strategy is tailored to your brand’s unique goals.</p>
+            <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <li>100+ brands scaled across NZ & globally</li>
+              <li>Data-driven, creative, and transparent</li>
+              <li>Proactive communication & reporting</li>
+              <li>Local Auckland experts, global reach</li>
+            </ul>
+            <p className="text-gray-700">Ready to grow? Let’s talk!</p>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <Image src="/auckland-skyline.jpg" alt="Auckland Skyline" width={400} height={300} className="rounded-xl shadow-lg object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-blue-900 text-white" id="contact">
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6">Contact Us</h3>
+          <p className="mb-8">Let’s discuss how Tiberius can help your business grow. Fill out the form below and our team will be in touch within 24 hours.</p>
+          <form className="flex flex-col gap-4 items-center">
+            <input type="text" placeholder="Your Name" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" required />
+            <input type="email" placeholder="Your Email" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" required />
+            <textarea placeholder="How can we help you?" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" rows={4} required />
+            <button type="submit" className="mt-4 px-8 py-3 bg-sky-400 text-blue-900 font-semibold rounded-full hover:bg-sky-300 transition">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 bg-blue-950 text-blue-100 text-center text-sm">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 mb-2">
+          <span>© {new Date().getFullYear()} Tiberius Digital Marketing, Auckland NZ</span>
+          <span className="hidden sm:inline">|</span>
+          <a href="#" className="hover:underline">Privacy Policy</a>
+        </div>
+        <div className="flex justify-center gap-4 mt-2">
+          {socials.map((s, i) => (
+            <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="inline-block hover:scale-110 transition-transform">
+              <Image src={s.icon} alt={s.label} width={28} height={28} />
+            </a>
+          ))}
+        </div>
       </footer>
     </div>
   );
