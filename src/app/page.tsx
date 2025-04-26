@@ -13,7 +13,7 @@ const caseStudies = [
     title: "E-Commerce Growth",
     result: "+400% ROAS in 3 months",
     description: "Scaled a local retailer with Google Ads & CRO.",
-    image: "/case1.jpg",
+    image: "/case0.jpg",
   },
   {
     title: "SaaS Lead Gen",
