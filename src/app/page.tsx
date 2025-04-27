@@ -18,19 +18,31 @@ const caseStudies = [
     title: "E-Commerce Growth",
     result: "+400% ROAS in 3 months",
     description: "Scaled a local retailer with Google Ads & CRO.",
-    image: "/case0.jpg",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 007.48 19h9.04a2 2 0 001.83-1.3L21 13M7 13V6a1 1 0 011-1h3m4 0h2a1 1 0 011 1v1" />
+      </svg>
+    ),
   },
   {
     title: "SaaS Lead Gen",
     result: "Tripled qualified leads",
     description: "Full-funnel strategy for a NZ SaaS company.",
-    image: "/case2.jpg",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 17a4 4 0 01-8 0M12 3v14m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
   },
   {
     title: "Brand Awareness",
     result: "+200% new customers",
     description: "Creative social campaigns for a hospitality group.",
-    image: "/case3.jpg",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+      </svg>
+    ),
   },
 ];
 
@@ -164,7 +176,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {caseStudies.map((cs, i) => (
               <div key={i} className="bg-[#101a3c] rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6">
-                <Image src={cs.image} alt={cs.title} width={240} height={140} className="rounded mb-4 object-cover" />
+                {cs.icon}
                 <h4 className="font-semibold text-lg mb-2 text-blue-200">{cs.title}</h4>
                 <span className="text-blue-300 font-bold mb-1">{cs.result}</span>
                 <p className="text-blue-300 text-sm">{cs.description}</p>
