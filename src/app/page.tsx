@@ -4,11 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 
 const clientLogos = [
-  "/logo1.svg",
-  "/logo2.svg",
-  "/logo3.svg",
-  "/logo4.svg",
-  "/logo5.svg",
+  "/partnerlogos/Untitled326_20250427160426.PNG",
+  "/partnerlogos/Untitled326_20250427160451.PNG",
+  "/partnerlogos/Untitled326_20250427160515.PNG",
+  "/partnerlogos/Untitled326_20250427160806.PNG",
+  "/partnerlogos/Untitled326_20250427160909.PNG",
+  "/partnerlogos/Untitled326_20250427161033.PNG",
+  "/partnerlogos/Untitled326_20250427161112.PNG",
 ];
 
 const caseStudies = [
