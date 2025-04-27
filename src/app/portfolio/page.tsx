@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
@@ -39,8 +42,44 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#070e25] text-blue-100 flex flex-col font-[family-name:var(--font-geist-sans)]">
+      {/* Sticky Navbar */}
+      <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm w-full animate-fade-in-down">
+        <div className="flex items-center justify-between max-w-6xl mx-auto px-2 py-3">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/transparentlogo.PNG" alt="Tiberius Logo" width={40} height={40} className="h-10 w-10 object-contain" />
+            <span className="font-bold text-lg text-blue-100 hidden sm:inline">Tiberius</span>
+          </Link>
+          <button className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation" onClick={() => setNavOpen((o) => !o)}>
+            <svg className="w-7 h-7 text-blue-100" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div className="hidden sm:flex gap-8 items-center">
+            <a href="/portfolio" className="hover:text-blue-600 transition">Portfolio</a>
+            <a href="/#services" className="hover:text-blue-600 transition">Services</a>
+            <a href="/#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
+            <a href="/#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
+            <a href="/#about" className="hover:text-blue-600 transition">About</a>
+            <a href="/#blog" className="hover:text-blue-600 transition">Blog</a>
+            <a href="/#contact" className="hover:text-blue-600 transition">Contact</a>
+          </div>
+        </div>
+        {/* Mobile Nav Dropdown */}
+        {navOpen && (
+          <div className="sm:hidden bg-[#101a3c] px-4 pb-4 animate-fade-in-down">
+            <a href="/portfolio" className="block py-2 text-blue-100 hover:text-blue-600">Portfolio</a>
+            <a href="/#services" className="block py-2 text-blue-100 hover:text-blue-600">Services</a>
+            <a href="/#case-studies" className="block py-2 text-blue-100 hover:text-blue-600">Case Studies</a>
+            <a href="/#testimonials" className="block py-2 text-blue-100 hover:text-blue-600">Testimonials</a>
+            <a href="/#about" className="block py-2 text-blue-100 hover:text-blue-600">About</a>
+            <a href="/#blog" className="block py-2 text-blue-100 hover:text-blue-600">Blog</a>
+            <a href="/#contact" className="block py-2 text-blue-100 hover:text-blue-600">Contact</a>
+          </div>
+        )}
+      </nav>
       <header className="w-full bg-[#101a3c] py-16 px-4 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-100">Our Portfolio</h1>
         <p className="max-w-2xl mx-auto text-blue-300 text-lg">A selection of our recent digital marketing projects, campaigns, and client wins across Auckland and beyond.</p>
