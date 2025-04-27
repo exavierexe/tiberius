@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FaMagnet, FaShoppingCart, FaBullhorn } from "react-icons/fa";
 
 const clientLogos = [
   "/partnerlogos/aklroof.PNG",
@@ -19,9 +20,7 @@ const caseStudies = [
     result: "+400% ROAS in 3 months",
     description: "Scaled a local retailer with Google Ads & CRO.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 007.48 19h9.04a2 2 0 001.83-1.3L21 13M7 13V6a1 1 0 011-1h3m4 0h2a1 1 0 011 1v1" />
-      </svg>
+      <FaShoppingCart className="w-12 h-12 text-blue-400 mb-4" />
     ),
   },
   {
@@ -29,9 +28,7 @@ const caseStudies = [
     result: "Tripled qualified leads",
     description: "Full-funnel strategy for a NZ SaaS company.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 17a4 4 0 01-8 0M12 3v14m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
+      <FaMagnet className="w-12 h-12 text-blue-400 mb-4" />
     ),
   },
   {
@@ -39,9 +36,7 @@ const caseStudies = [
     result: "+200% new customers",
     description: "Creative social campaigns for a hospitality group.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-      </svg>
+      <FaBullhorn className="w-12 h-12 text-blue-400 mb-4" />
     ),
   },
 ];
@@ -94,7 +89,7 @@ export default function Home() {
       <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm w-full animate-fade-in-down">
         <div className="flex items-center justify-between max-w-6xl mx-auto px-2 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/transparentlogo.PNG" alt="Tiberius Logo" width={40} height={40} className="h-10 w-10 object-contain" />
+            <Image src="/silverlogo.PNG" alt="Tiberius Logo" width={40} height={40} className="h-10 w-10 object-contain" />
             <span className="font-bold text-lg text-blue-100 hidden sm:inline">Tiberius</span>
           </Link>
           <button className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation" onClick={() => setNavOpen((o) => !o)}>
