@@ -8,7 +8,7 @@ const clientLogos = [
   "/partnerlogos/Untitled326_20250427160451.PNG",
   "/partnerlogos/Untitled326_20250427160515.PNG",
   "/partnerlogos/Untitled326_20250427160806.PNG",
-  "/partnerlogos/Untitled326_20250427160909.PNG",
+  "/partnerlogos/Untitled326_20250427162526.PNG",
   "/partnerlogos/Untitled326_20250427161033.PNG",
   "/partnerlogos/Untitled326_20250427161112.PNG",
 ];
