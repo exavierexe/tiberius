@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 
 const clientLogos = [
-  "/partnerlogos/Untitled326_20250427160426.PNG",
-  "/partnerlogos/Untitled326_20250427160451.PNG",
-  "/partnerlogos/Untitled326_20250427160515.PNG",
-  "/partnerlogos/Untitled326_20250427160806.PNG",
-  "/partnerlogos/Untitled326_20250427162526.PNG",
-  "/partnerlogos/Untitled326_20250427161033.PNG",
-  "/partnerlogos/Untitled326_20250427161112.PNG",
+  "/partnerlogos/aklroof.PNG",
+  "/partnerlogos/casa.PNG",
+  "/partnerlogos/climber.PNG",
+  "/partnerlogos/greasemonkey.PNG",
+  "/partnerlogos/remax.PNG",
+  "/partnerlogos/solid.PNG",
+  "/partnerlogos/surface.PNG",
 ];
 
 const caseStudies = [
