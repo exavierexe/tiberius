@@ -257,8 +257,8 @@ export default function Home() {
             <p className="text-blue-200">Ready to grow? Let’s talk!</p>
           </div>
           <div className="flex-1 flex justify-center">
-            <Image src="/auckland-skyline.jpg" alt="Auckland Skyline" width={400} height={300} className="rounded-xl shadow-lg object-cover" />
-          </div>
+          <iframe title="vimeo-player" src="https://player.vimeo.com/video/1079069674?h=2fbc69a724" width="640" height="360" frameborder="0"    allowfullscreen></iframe> 
+         </div>
         </div>
       </section>
 
