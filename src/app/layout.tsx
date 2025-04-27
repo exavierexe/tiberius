@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tiberius Digital Marketing",
   description: "Auckland's Premier Digital Marketing Agency | Tiberius",
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({
