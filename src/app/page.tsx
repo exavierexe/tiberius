@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 const clientLogos = [
   "/logo1.svg",
@@ -70,18 +71,45 @@ const socials = [
 ];
 
 export default function Home() {
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#070e25] text-blue-100 flex flex-col font-[family-name:var(--font-geist-sans)]">
       {/* Sticky Navbar */}
-      <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm flex justify-center gap-8 py-4 px-6 text-blue-100 font-semibold text-sm animate-fade-in-down">
-        <a href="#services" className="hover:text-blue-600 transition">Services</a>
-        <a href="#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
-        <a href="/portfolio" className="hover:text-blue-600 transition">Portfolio</a>
-        <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
-        <a href="#about" className="hover:text-blue-600 transition">About</a>
-        <a href="#blog" className="hover:text-blue-600 transition">Blog</a>
-        <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+      <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm w-full animate-fade-in-down">
+        <div className="flex items-center justify-between max-w-6xl mx-auto px-2 py-3">
+          <a href="/" className="flex items-center gap-2">
+            <Image src="/transparentlogo.PNG" alt="Tiberius Logo" width={40} height={40} className="h-10 w-10 object-contain" />
+            <span className="font-bold text-lg text-blue-100 hidden sm:inline">Tiberius</span>
+          </a>
+          <button className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation" onClick={() => setNavOpen((o) => !o)}>
+            <svg className="w-7 h-7 text-blue-100" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div className="hidden sm:flex gap-8 items-center">
+            <a href="#services" className="hover:text-blue-600 transition">Services</a>
+            <a href="#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
+            <a href="/portfolio" className="hover:text-blue-600 transition">Portfolio</a>
+            <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
+            <a href="#about" className="hover:text-blue-600 transition">About</a>
+            <a href="#blog" className="hover:text-blue-600 transition">Blog</a>
+            <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+          </div>
+        </div>
+        {/* Mobile Nav Dropdown */}
+        {navOpen && (
+          <div className="sm:hidden bg-[#101a3c] px-4 pb-4 animate-fade-in-down">
+            <a href="#services" className="block py-2 text-blue-100 hover:text-blue-600">Services</a>
+            <a href="#case-studies" className="block py-2 text-blue-100 hover:text-blue-600">Case Studies</a>
+            <a href="/portfolio" className="block py-2 text-blue-100 hover:text-blue-600">Portfolio</a>
+            <a href="#testimonials" className="block py-2 text-blue-100 hover:text-blue-600">Testimonials</a>
+            <a href="#about" className="block py-2 text-blue-100 hover:text-blue-600">About</a>
+            <a href="#blog" className="block py-2 text-blue-100 hover:text-blue-600">Blog</a>
+            <a href="#contact" className="block py-2 text-blue-100 hover:text-blue-600">Contact</a>
+          </div>
+        )}
       </nav>
+      
 
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-[#101a3c] to-[#16224a] animate-fade-in">
