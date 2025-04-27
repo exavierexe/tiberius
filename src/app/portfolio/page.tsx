@@ -58,25 +58,25 @@ export default function Portfolio() {
             </svg>
           </button>
           <div className="hidden sm:flex gap-8 items-center">
-            <a href="/portfolio" className="hover:text-blue-600 transition">Portfolio</a>
-            <a href="/#services" className="hover:text-blue-600 transition">Services</a>
-            <a href="/#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
-            <a href="/#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
-            <a href="/#about" className="hover:text-blue-600 transition">About</a>
-            <a href="/#blog" className="hover:text-blue-600 transition">Blog</a>
-            <a href="/#contact" className="hover:text-blue-600 transition">Contact</a>
+            <Link href="/portfolio" className="hover:text-blue-600 transition">Portfolio</Link>
+            <Link href="/#services" className="hover:text-blue-600 transition">Services</Link>
+            <Link href="/#case-studies" className="hover:text-blue-600 transition">Case Studies</Link>
+            <Link href="/#testimonials" className="hover:text-blue-600 transition">Testimonials</Link>
+            <Link href="/#about" className="hover:text-blue-600 transition">About</Link>
+            <Link href="/#blog" className="hover:text-blue-600 transition">Blog</Link>
+            <Link href="/#contact" className="hover:text-blue-600 transition">Contact</Link>
           </div>
         </div>
         {/* Mobile Nav Dropdown */}
         {navOpen && (
           <div className="sm:hidden bg-[#101a3c] px-4 pb-4 animate-fade-in-down">
-            <a href="/portfolio" className="block py-2 text-blue-100 hover:text-blue-600">Portfolio</a>
-            <a href="/#services" className="block py-2 text-blue-100 hover:text-blue-600">Services</a>
-            <a href="/#case-studies" className="block py-2 text-blue-100 hover:text-blue-600">Case Studies</a>
-            <a href="/#testimonials" className="block py-2 text-blue-100 hover:text-blue-600">Testimonials</a>
-            <a href="/#about" className="block py-2 text-blue-100 hover:text-blue-600">About</a>
-            <a href="/#blog" className="block py-2 text-blue-100 hover:text-blue-600">Blog</a>
-            <a href="/#contact" className="block py-2 text-blue-100 hover:text-blue-600">Contact</a>
+            <Link href="/portfolio" className="block py-2 text-blue-100 hover:text-blue-600">Portfolio</Link>
+            <Link href="/#services" className="block py-2 text-blue-100 hover:text-blue-600">Services</Link>
+            <Link href="/#case-studies" className="block py-2 text-blue-100 hover:text-blue-600">Case Studies</Link>
+            <Link href="/#testimonials" className="block py-2 text-blue-100 hover:text-blue-600">Testimonials</Link>
+            <Link href="/#about" className="block py-2 text-blue-100 hover:text-blue-600">About</Link>
+            <Link href="/#blog" className="block py-2 text-blue-100 hover:text-blue-600">Blog</Link>
+            <Link href="/#contact" className="block py-2 text-blue-100 hover:text-blue-600">Contact</Link>
           </div>
         )}
       </nav>
