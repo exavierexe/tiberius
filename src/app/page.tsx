@@ -71,11 +71,12 @@ const socials = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-sky-50 text-gray-900 flex flex-col font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen bg-[#070e25] text-blue-100 flex flex-col font-[family-name:var(--font-geist-sans)]">
       {/* Sticky Navbar */}
-      <nav className="sticky top-0 z-30 bg-white/80 backdrop-blur shadow-sm flex justify-center gap-8 py-4 px-6 text-blue-900 font-semibold text-sm animate-fade-in-down">
+      <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm flex justify-center gap-8 py-4 px-6 text-blue-100 font-semibold text-sm animate-fade-in-down">
         <a href="#services" className="hover:text-blue-600 transition">Services</a>
         <a href="#case-studies" className="hover:text-blue-600 transition">Case Studies</a>
+        <a href="/portfolio" className="hover:text-blue-600 transition">Portfolio</a>
         <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
         <a href="#about" className="hover:text-blue-600 transition">About</a>
         <a href="#blog" className="hover:text-blue-600 transition">Blog</a>
@@ -83,17 +84,17 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-sky-100 to-blue-300 animate-fade-in">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-900 drop-shadow-lg">Tiberius Digital Marketing</h1>
-        <h2 className="text-xl sm:text-2xl font-medium text-blue-700 mb-6">Auckland’s Premier Growth Agency for Ambitious Brands</h2>
-        <p className="max-w-xl mx-auto mb-8 text-gray-700">Unlock your brand’s full potential with Tiberius – the digital marketing partner trusted by New Zealand’s fastest-growing businesses. We deliver data-driven campaigns, creative strategies, and measurable results.</p>
-        <a href="#contact" className="inline-block px-8 py-3 bg-blue-700 text-white rounded-full font-semibold shadow-lg hover:bg-blue-900 transition">Book a Free Strategy Call</a>
+      <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-[#101a3c] to-[#16224a] animate-fade-in">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-100 drop-shadow-lg">Tiberius Digital Marketing</h1>
+        <h2 className="text-xl sm:text-2xl font-medium text-blue-200 mb-6">Auckland’s Premier Growth Agency for Ambitious Brands</h2>
+        <p className="max-w-xl mx-auto mb-8 text-blue-200">Unlock your brand’s full potential with Tiberius – the digital marketing partner trusted by New Zealand’s fastest-growing businesses. We deliver data-driven campaigns, creative strategies, and measurable results.</p>
+        <a href="#contact" className="inline-block px-8 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-800 transition">Book a Free Strategy Call</a>
       </section>
 
       {/* Brands We’ve Helped */}
-      <section className="py-8 px-4 bg-white animate-fade-in-up" id="brands">
+      <section className="py-8 px-4 bg-[#101a3c] animate-fade-in-up" id="brands">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <span className="uppercase text-xs text-gray-500 tracking-widest mb-2">Brands We’ve Helped</span>
+          <span className="uppercase text-xs text-blue-300 tracking-widest mb-2">Brands We’ve Helped</span>
           <div className="flex flex-wrap justify-center gap-8 items-center opacity-80">
             {clientLogos.map((logo, i) => (
               <Image key={i} src={logo} alt="Client logo" width={100} height={40} className="object-contain grayscale hover:grayscale-0 transition" />
@@ -104,37 +105,37 @@ export default function Home() {
 
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-white" id="services">
+      <section className="py-20 px-4 bg-[#101a3c]" id="services">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Our Services</h3>
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">Our Services</h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-              <h4 className="font-semibold text-xl mb-2 text-blue-800">Google & YouTube Ads</h4>
-              <p className="text-gray-700">Expert campaign management, optimization, and scaling for maximum ROI. We make every dollar count.</p>
+            <div className="bg-[#16224a] p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-200">Google & YouTube Ads</h4>
+              <p className="text-blue-300">Expert campaign management, optimization, and scaling for maximum ROI. We make every dollar count.</p>
             </div>
-            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-              <h4 className="font-semibold text-xl mb-2 text-blue-800">Social Media Marketing</h4>
-              <p className="text-gray-700">Grow your brand with creative, targeted campaigns on Facebook, Instagram, LinkedIn, and more.</p>
+            <div className="bg-[#16224a] p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-200">Social Media Marketing</h4>
+              <p className="text-blue-300">Grow your brand with creative, targeted campaigns on Facebook, Instagram, LinkedIn, and more.</p>
             </div>
-            <div className="bg-sky-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-              <h4 className="font-semibold text-xl mb-2 text-blue-800">Conversion Rate Optimization</h4>
-              <p className="text-gray-700">Turn more visitors into customers with data-driven landing pages and funnel strategies.</p>
+            <div className="bg-[#16224a] p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-xl mb-2 text-blue-200">Conversion Rate Optimization</h4>
+              <p className="text-blue-300">Turn more visitors into customers with data-driven landing pages and funnel strategies.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 px-4 bg-blue-50 animate-fade-in-up" id="case-studies">
+      <section className="py-20 px-4 bg-[#070e25] animate-fade-in-up" id="case-studies">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Case Studies</h3>
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">Case Studies</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {caseStudies.map((cs, i) => (
-              <div key={i} className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6">
+              <div key={i} className="bg-[#101a3c] rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6">
                 <Image src={cs.image} alt={cs.title} width={240} height={140} className="rounded mb-4 object-cover" />
-                <h4 className="font-semibold text-lg mb-2 text-blue-800">{cs.title}</h4>
-                <span className="text-sky-700 font-bold mb-1">{cs.result}</span>
-                <p className="text-gray-700 text-sm">{cs.description}</p>
+                <h4 className="font-semibold text-lg mb-2 text-blue-200">{cs.title}</h4>
+                <span className="text-blue-300 font-bold mb-1">{cs.result}</span>
+                <p className="text-blue-300 text-sm">{cs.description}</p>
               </div>
             ))}
           </div>
@@ -142,14 +143,14 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-white animate-fade-in-up" id="faq">
+      <section className="py-20 px-4 bg-[#070e25] animate-fade-in-up" id="faq">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">Frequently Asked Questions</h3>
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">Frequently Asked Questions</h3>
           <div className="divide-y divide-blue-100">
             {faqs.map((faq, i) => (
               <div key={i} className="py-4">
-                <div className="font-semibold text-blue-800 mb-1">Q: {faq.q}</div>
-                <div className="text-gray-700">A: {faq.a}</div>
+                <div className="font-semibold text-blue-200 mb-1">Q: {faq.q}</div>
+                <div className="text-blue-300">A: {faq.a}</div>
               </div>
             ))}
           </div>
@@ -157,27 +158,27 @@ export default function Home() {
       </section>
 
       {/* Newsletter Signup Section */}
-      <section className="py-16 px-4 bg-sky-100 animate-fade-in-up" id="newsletter">
+      <section className="py-16 px-4 bg-[#070e25] animate-fade-in-up" id="newsletter">
         <div className="max-w-xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4 text-blue-900">Subscribe to Our Newsletter</h3>
-          <p className="mb-6 text-gray-700">Get the latest marketing tips, case studies, and news from Tiberius – straight to your inbox.</p>
+          <h3 className="text-2xl font-bold mb-4 text-blue-100">Subscribe to Our Newsletter</h3>
+          <p className="mb-6 text-blue-300">Get the latest marketing tips, case studies, and news from Tiberius – straight to your inbox.</p>
           <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <input type="email" placeholder="Your Email" className="px-4 py-3 rounded w-full max-w-xs" required />
-            <button type="submit" className="px-6 py-3 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-900 transition">Subscribe</button>
+            <input type="email" placeholder="Your Email" className="px-4 py-3 rounded w-full max-w-xs bg-[#101a3c] text-blue-100 placeholder:text-blue-300 border border-blue-800" required />
+            <button type="submit" className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-800 transition">Subscribe</button>
           </form>
         </div>
       </section>
 
       {/* Blog Preview Section */}
-      <section className="py-20 px-4 bg-blue-50 animate-fade-in-up" id="blog">
+      <section className="py-20 px-4 bg-[#070e25] animate-fade-in-up" id="blog">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">From Our Blog</h3>
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">From Our Blog</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {blogPosts.map((post, i) => (
-              <a key={i} href={post.link} className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6 group">
+              <a key={i} href={post.link} className="bg-[#101a3c] rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-6 group">
                 <Image src={post.image} alt={post.title} width={320} height={160} className="rounded mb-4 object-cover group-hover:scale-105 transition-transform" />
-                <h4 className="font-semibold text-lg mb-2 text-blue-800 group-hover:text-blue-900 transition">{post.title}</h4>
-                <p className="text-gray-700 text-sm">{post.excerpt}</p>
+                <h4 className="font-semibold text-lg mb-2 text-blue-200 group-hover:text-blue-100 transition">{post.title}</h4>
+                <p className="text-blue-300 text-sm">{post.excerpt}</p>
               </a>
             ))}
           </div>
@@ -185,43 +186,43 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-blue-50" id="testimonials">
+      <section className="py-20 px-4 bg-[#070e25]" id="testimonials">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-10 text-blue-900">What Our Clients Say</h3>
+          <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">What Our Clients Say</h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+            <blockquote className="bg-[#1b294f] rounded-xl shadow p-6 text-blue-200">
               <p className="mb-2">“Tiberius helped us scale our e-commerce brand in months. Their Google Ads expertise is unmatched!”</p>
-              <footer className="text-blue-800 font-semibold">– Sarah, Auckland Retailer</footer>
+              <footer className="text-blue-300 font-semibold">– Sarah, Auckland Retailer</footer>
             </blockquote>
-            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+            <blockquote className="bg-[#1b294f] rounded-xl shadow p-6 text-blue-200">
               <p className="mb-2">“The Tiberius team delivers results and communicates every step. We saw a 5x ROAS within weeks.”</p>
-              <footer className="text-blue-800 font-semibold">– James, NZ SaaS Founder</footer>
+              <footer className="text-blue-300 font-semibold">– James, NZ SaaS Founder</footer>
             </blockquote>
-            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+            <blockquote className="bg-[#1b294f] rounded-xl shadow p-6 text-blue-200">
               <p className="mb-2">“Our brand awareness in Auckland exploded thanks to Tiberius’ creative campaigns.”</p>
-              <footer className="text-blue-800 font-semibold">– Priya, Local Business Owner</footer>
+              <footer className="text-blue-300 font-semibold">– Priya, Local Business Owner</footer>
             </blockquote>
-            <blockquote className="bg-white rounded-xl shadow p-6 text-gray-700">
+            <blockquote className="bg-[#1b294f] rounded-xl shadow p-6 text-blue-200">
               <p className="mb-2">“Professional, proactive, and always on point. Highly recommended for NZ businesses.”</p>
-              <footer className="text-blue-800 font-semibold">– Matt, E-commerce Director</footer>
+              <footer className="text-blue-300 font-semibold">– Matt, E-commerce Director</footer>
             </blockquote>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 bg-white" id="about">
+      <section className="py-20 px-4 bg-[#0a1126]" id="about">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1">
-            <h3 className="text-3xl font-bold mb-4 text-blue-900">Who We Are</h3>
-            <p className="text-gray-700 mb-4">Tiberius is a results-driven digital marketing agency based in Auckland, New Zealand. Our team brings years of experience across e-commerce, SaaS, and local business growth. We don’t believe in cookie-cutter solutions – every strategy is tailored to your brand’s unique goals.</p>
-            <ul className="list-disc pl-6 text-gray-700 mb-4">
+            <h3 className="text-3xl font-bold mb-4 text-blue-100">Who We Are</h3>
+            <p className="text-blue-200 mb-4">Tiberius is a results-driven digital marketing agency based in Auckland, New Zealand. Our team brings years of experience across e-commerce, SaaS, and local business growth. We don’t believe in cookie-cutter solutions – every strategy is tailored to your brand’s unique goals.</p>
+            <ul className="list-disc pl-6 text-blue-200 mb-4">
               <li>100+ brands scaled across NZ & globally</li>
               <li>Data-driven, creative, and transparent</li>
               <li>Proactive communication & reporting</li>
               <li>Local Auckland experts, global reach</li>
             </ul>
-            <p className="text-gray-700">Ready to grow? Let’s talk!</p>
+            <p className="text-blue-200">Ready to grow? Let’s talk!</p>
           </div>
           <div className="flex-1 flex justify-center">
             <Image src="/auckland-skyline.jpg" alt="Auckland Skyline" width={400} height={300} className="rounded-xl shadow-lg object-cover" />
