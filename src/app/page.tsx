@@ -257,7 +257,7 @@ export default function Home() {
             <p className="text-blue-200">Ready to grow? Let’s talk!</p>
           </div>
           <div className="flex-1 flex justify-center">
-          <iframe title="vimeo-player" src="https://player.vimeo.com/video/1079069674?h=2fbc69a724" width="640" height="360" frameborder="0"    allowfullscreen></iframe> 
+          <iframe title="vimeo-player" src="https://player.vimeo.com/video/1079069674?h=2fbc69a724" width="640" height="360" frameBorder="0" allowFullScreen></iframe> 
          </div>
         </div>
       </section>
