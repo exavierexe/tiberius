@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Tiberius Digital Marketing",
   description: "Auckland's Premier Digital Marketing Agency | Tiberius",
   icons: {
-    icon: "/tiberiuslogo.jpg",
+    icon: "/favicon.png",
   },
 };
 
