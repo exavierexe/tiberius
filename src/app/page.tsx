@@ -83,6 +83,13 @@ const socials = [
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string|null>(null);
+  const [phone, setPhone] = useState("");
   return (
     <div className="min-h-screen bg-[#070e25] text-blue-100 flex flex-col font-[family-name:var(--font-geist-sans)]">
       {/* Sticky Navbar */}
@@ -282,18 +289,87 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-6">Contact Us</h3>
           <p className="mb-8">Let’s discuss how Tiberius can help your business grow. Fill out the form below and our team will be in touch within 24 hours.</p>
-          <form className="flex flex-col gap-4 items-center">
-            <input type="text" placeholder="Your Name" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" required />
-            <input type="email" placeholder="Your Email" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" required />
-            <textarea placeholder="How can we help you?" className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900" rows={4} required />
-            <button type="submit" className="mt-4 px-8 py-3 bg-sky-400 text-blue-900 font-semibold rounded-full hover:bg-sky-300 transition">Send Message</button>
-          </form>
+            <form
+              className="flex flex-col gap-4 items-center"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setSubmitting(true);
+                setError(null);
+                setSuccess(false);
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, phone, message }),
+                  });
+                  if (!res.ok) {
+                    const data = await res.json();
+                    throw new Error(data.error || "Submission failed");
+                  }
+                  setSuccess(true);
+                  setName("");
+                  setEmail("");
+                  setPhone("");
+                  setMessage("");
+                } catch (err: any) {
+                  setError(err.message || "Submission failed");
+                } finally {
+                  setSubmitting(false);
+                }
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900"
+                required
+                value={name}
+                onChange={e => setName(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900"
+                required
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+              <input
+                type="tel"
+                placeholder="Your Phone (optional)"
+                className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+              />
+              <textarea
+                placeholder="How can we help you?"
+                className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900"
+                rows={4}
+                required
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="mt-4 px-8 py-3 bg-sky-400 text-blue-900 font-semibold rounded-full hover:bg-sky-300 transition"
+                disabled={submitting}
+              >
+                {submitting ? "Sending..." : "Send Message"}
+              </button>
+              {success && (
+                <div className="text-green-400 mt-2">Thank you! Your message has been sent.</div>
+              )}
+              {error && (
+                <div className="text-red-400 mt-2">{error}</div>
+              )}
+            </form>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-8 px-4 bg-blue-950 text-blue-100 text-center text-sm">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-2 mb-2">
+          <span> {new Date().getFullYear()} Tiberius Digital Marketing, Auckland NZ</span>
           <span>© {new Date().getFullYear()} Tiberius Digital Marketing, Auckland NZ</span>
           <span className="hidden sm:inline">|</span>
           <a href="#" className="hover:underline">Privacy Policy</a>
