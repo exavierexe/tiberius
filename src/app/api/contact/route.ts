@@ -11,7 +11,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
     const submission = await prisma.contactSubmission.create({
-      data: { name, email, phone, message },
+      data: {
+        name,
+        email,
+        phone: phone || null,
+        message,
+      },
     });
 
     // Send email notification
