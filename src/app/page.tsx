@@ -75,10 +75,12 @@ const faqs = [
   },
 ];
 
+import { FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+
 const socials = [
-  { href: "https://www.linkedin.com/", icon: "/linkedin.svg", label: "LinkedIn" },
-  { href: "https://www.instagram.com/", icon: "/instagram.svg", label: "Instagram" },
-  { href: "https://twitter.com/", icon: "/twitter.svg", label: "Twitter" },
+  { href: "https://www.linkedin.com/", icon: <FaLinkedin size={28} />, label: "LinkedIn" },
+  { href: "https://www.instagram.com/", icon: <FaInstagram size={28} />, label: "Instagram" },
+  { href: "https://twitter.com/", icon: <FaTwitter size={28} />, label: "Twitter" },
 ];
 
 export default function Home() {
@@ -387,11 +389,11 @@ export default function Home() {
           <a href="#" className="hover:underline">Privacy Policy</a>
         </div>
         <div className="flex justify-center gap-4 mt-2">
-          {/* {socials.map((s, i) => (
-            <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="inline-block hover:scale-110 transition-transform">
-              <Image src={s.icon} alt={s.label} width={28} height={28} />
+          {socials.map((s, i) => (
+            <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="inline-block hover:scale-110 transition-transform text-blue-100 hover:text-blue-400">
+              {s.icon}
             </a>
-          ))} */}
+          ))} 
         </div>
       </footer>
     </div>
