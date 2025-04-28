@@ -45,13 +45,13 @@ const blogPosts = [
   {
     title: "How to Scale Google Ads in 2025",
     excerpt: "Our expert tips for NZ brands looking to grow with paid search.",
-    image: "/blog1.jpg",
+    image: "/images/barscreen.JPG",
     link: "#",
   },
   {
     title: "Social Media Trends in Auckland",
     excerpt: "What’s working now for local businesses on Instagram & Facebook.",
-    image: "/blog2.jpg",
+    image: "/images/cellphone.JPG",
     link: "#",
   },
 ];
@@ -124,9 +124,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-[#101a3c] to-[#16224a] animate-fade-in">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-100 drop-shadow-lg">Tiberius Digital Marketing</h1>
-        <h2 className="text-xl sm:text-2xl font-medium text-blue-200 mb-6">Auckland’s Premier Growth Agency for Ambitious Brands</h2>
-        <p className="max-w-xl mx-auto mb-8 text-blue-200">Unlock your brand’s full potential with Tiberius – the digital marketing partner trusted by New Zealand’s fastest-growing businesses. We deliver data-driven campaigns, creative strategies, and measurable results.</p>
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-100 drop-shadow-lg">Start Scaling Your Revenue & Profits With Proven Digital Marketing Strategies</h1>
+        <h2 className="text-xl sm:text-2xl font-medium text-blue-200 mb-6">We Deliver Data-driven Campaigns and Measurable Results</h2>
+        <p className="max-w-xl mx-auto mb-8 text-blue-200">Are you struggling with flat sales or wasted ad spend? We transform underperforming marketing into high-impact growth. Unlock your brand’s full potential with the digital marketing partner trusted by New Zealand’s fastest-growing businesses. Our data-driven strategies and creative firepower deliver up to 10x ROI in 90 days.</p>
         <a href="#contact" className="inline-block px-8 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-800 transition">Book a Free Strategy Call</a>
       </section>
 
