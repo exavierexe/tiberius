@@ -30,10 +30,10 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // Only send to exavier@tiberius.co.nz
+
     const mailOptions = {
       from: `Tiberius Contact Form <${process.env.EMAIL_USER}>`,
-      to: 'exavier@tiberius.co.nz',
+      to: 'exavier@tiberius.co.nz, nabi@tiberius.co.nz',
       subject: 'New Contact Form Submission',
       text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\nMessage: ${message}`,
       html: `<h2>New Contact Form Submission</h2><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Phone:</strong> ${phone || '-'}</p><p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br/>')}</p>`
