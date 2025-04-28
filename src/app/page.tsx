@@ -387,11 +387,11 @@ export default function Home() {
           <a href="#" className="hover:underline">Privacy Policy</a>
         </div>
         <div className="flex justify-center gap-4 mt-2">
-          {socials.map((s, i) => (
+          {/* {socials.map((s, i) => (
             <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="inline-block hover:scale-110 transition-transform">
               <Image src={s.icon} alt={s.label} width={28} height={28} />
             </a>
-          ))}
+          ))} */}
         </div>
       </footer>
     </div>
