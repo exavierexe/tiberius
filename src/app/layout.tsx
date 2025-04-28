@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/silverlogo.PNG" />
+        <link rel="shortcut icon" type="image/png" href="/silverlogo.PNG" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
