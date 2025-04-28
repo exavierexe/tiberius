@@ -313,8 +313,16 @@ export default function Home() {
                   setMessage("");
                 } catch (err: unknown) {
                   let errorMsg = "Submission failed";
-                  if (err && typeof err === "object" && "message" in err && typeof (err as any).message === "string") {
-                    errorMsg = (err as any).message;
+                  function isErrorWithMessage(e: unknown): e is { message: string } {
+                    return (
+                      typeof e === "object" &&
+                      e !== null &&
+                      "message" in e &&
+                      typeof (e as { message: unknown }).message === "string"
+                    );
+                  }
+                  if (isErrorWithMessage(err)) {
+                    errorMsg = err.message;
                   }
                   setError(errorMsg);
                 } finally {
