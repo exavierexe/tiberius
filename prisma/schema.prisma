@@ -18,3 +18,9 @@ model ContactSubmission {
   message      String
   submittedAt  DateTime @default(now()) @map("submitted_at")
 }
+
+model EmailSignup {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  createdAt  DateTime @default(now())
+}

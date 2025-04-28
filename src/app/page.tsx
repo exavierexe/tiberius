@@ -59,19 +59,35 @@ const blogPosts = [
 const faqs = [
   {
     q: "How quickly can I see results?",
-    a: "Most clients see positive ROI within the first 30-60 days, depending on campaign type and goals.",
+    a: "Most clients see positive ROI within the first 30-60 days, depending on campaign type and goals. We focus on quick wins as well as long-term growth, so you’ll see improvements as soon as campaigns are live, with compounding results over time.",
   },
   {
     q: "Do you work with small businesses?",
-    a: "Absolutely! We tailor strategies for both startups and established brands across New Zealand.",
+    a: "Absolutely! We tailor strategies for both startups and established brands across New Zealand. Every business gets a bespoke approach, no matter the size or budget.",
   },
   {
     q: "What platforms do you specialize in?",
-    a: "Google Ads, YouTube, Facebook, Instagram, LinkedIn, and more.",
+    a: "Google Ads, YouTube, Facebook, Instagram, LinkedIn, and more. We select the best mix of platforms for your goals and audience.",
   },
   {
     q: "Is there a minimum contract?",
-    a: "We offer flexible month-to-month engagements to suit your needs.",
+    a: "We offer flexible month-to-month engagements to suit your needs. No lock-in contracts – stay because you love the results!",
+  },
+  {
+    q: "Can you capture drone footage for my business?",
+    a: "Yes, we offer high-definition drone footage as part of our creative services. Our team is experienced in aerial videography and can provide stunning visuals to showcase your business, property, or event from unique perspectives. This content is perfect for websites, social media, and ad campaigns.",
+  },
+  {
+    q: "Why wouldn't I just do my marketing in-house?",
+    a: "While in-house marketing can work for some, partnering with Tiberius gives you access to a team of experts with deep experience across all digital channels. We stay on top of the latest trends and technologies, implement strategies much faster, and provide full-stack solutions. Not only do we set up and manage your ad campaigns, but we also optimize your website to receive and convert traffic. This holistic approach maximizes your ROI and saves you time and resources.",
+  },
+  {
+    q: "What makes Tiberius unique?",
+    a: "We implement things faster and offer full-stack solutions. Unlike many agencies, we don’t just run ads – we ensure your website, landing pages, and analytics are fully optimized to convert visitors into customers. Our team combines creative, technical, and strategic expertise, delivering measurable results with speed and transparency.",
+  },
+  {
+    q: "Do you offer SEO along with Google Ads?",
+    a: "Yes, we provide comprehensive SEO services in addition to Google Ads management. Our approach ensures you get both immediate traffic from paid campaigns and sustainable, long-term growth from organic search. We optimize your site structure, content, and technical SEO to help you dominate search rankings while maximizing your paid ad performance.",
   },
 ];
 
@@ -83,8 +99,46 @@ const socials = [
   { href: "https://twitter.com/", icon: <FaTwitter size={28} />, label: "Twitter" },
 ];
 
+// Collapsible FAQ Item component
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="py-3">
+      <button
+        className="w-full flex justify-between items-center text-left font-semibold text-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-controls={`faq-panel-${q.replace(/\s+/g, "-")}`}
+      >
+        <span>Q: {q}</span>
+        <svg
+          className={`w-5 h-5 ml-2 transform transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        id={`faq-panel-${q.replace(/\s+/g, "-")}`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+        aria-hidden={!open}
+      >
+        <div className="text-blue-300 text-base leading-relaxed">A: {a}</div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
+  // Newsletter signup state
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterSuccess, setNewsletterSuccess] = useState<string|null>(null);
+  const [newsletterError, setNewsletterError] = useState<string|null>(null);
   const [showNav, setShowNav] = useState(true);
   const lastScrollY = useRef(0);
 
@@ -115,7 +169,7 @@ export default function Home() {
         <div className="flex items-center justify-between max-w-6xl mx-auto px-2 py-3">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/silverlogo.PNG" alt="Tiberius Logo" width={41} height={41} className="h-[41px] w-[41px] object-contain" />
-            <span className="hidden sm:inline text-blue-100 font-cinzel font-extrabold text-3xl tracking-wide uppercase" style={{ fontFamily: 'Cinzel, serif', letterSpacing: '0.1em' }}>TIBERIUS</span>
+            <span className="text-blue-100 font-cinzel font-extrabold text-3xl tracking-wide uppercase ml-2" style={{ fontFamily: 'Cinzel, serif', letterSpacing: '0.1em' }}>TIBERIUS</span>
           </Link>
           <button className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation" onClick={() => setNavOpen((o) => !o)}>
             <svg className="w-7 h-7 text-blue-100" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -212,23 +266,99 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-center mb-10 text-blue-100">Frequently Asked Questions</h3>
           <div className="divide-y divide-blue-100">
             {faqs.map((faq, i) => (
-              <div key={i} className="py-4">
-                <div className="font-semibold text-blue-200 mb-1">Q: {faq.q}</div>
-                <div className="text-blue-300">A: {faq.a}</div>
-              </div>
+              <FAQItem key={i} q={faq.q} a={faq.a} />
             ))}
           </div>
         </div>
       </section>
+
+// Collapsible FAQ Item component
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="py-3">
+      <button
+        className="w-full flex justify-between items-center text-left font-semibold text-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-controls={`faq-panel-${q.replace(/\s+/g, "-")}`}
+      >
+        <span>Q: {q}</span>
+        <svg
+          className={`w-5 h-5 ml-2 transform transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        id={`faq-panel-${q.replace(/\s+/g, "-")}`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+        aria-hidden={!open}
+      >
+        <div className="text-blue-300 text-base leading-relaxed">A: {a}</div>
+      </div>
+    </div>
+  );
+}
+
 
       {/* Newsletter Signup Section */}
       <section className="py-16 px-4 bg-[#070e25] animate-fade-in-up" id="newsletter">
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-4 text-blue-100">Subscribe to Our Newsletter</h3>
           <p className="mb-6 text-blue-300">Get the latest marketing tips, case studies, and news from Tiberius – straight to your inbox.</p>
-          <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <input type="email" placeholder="Your Email" className="px-4 py-3 rounded w-full max-w-xs bg-[#101a3c] text-blue-100 placeholder:text-blue-300 border border-blue-800" required />
-            <button type="submit" className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-800 transition">Subscribe</button>
+          <form
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setNewsletterError(null);
+              setNewsletterSuccess(null);
+              setNewsletterSubmitting(true);
+              try {
+                const res = await fetch("/api/email-signup", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ email: newsletterEmail }),
+                });
+                if (!res.ok) {
+                  const data = await res.json();
+                  throw new Error(data.error || "Signup failed");
+                }
+                setNewsletterSuccess("Thank you for subscribing!");
+                setNewsletterEmail("");
+              } catch (err: unknown) {
+                let errorMsg = "Signup failed";
+                if (err && typeof err === "object" && "message" in err && typeof (err as { message: unknown }).message === "string") {
+                  errorMsg = (err as { message: string }).message;
+                }
+                setNewsletterError(errorMsg);
+              } finally {
+                setNewsletterSubmitting(false);
+              }
+            }}
+          >
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="px-4 py-3 rounded w-full max-w-xs bg-[#101a3c] text-blue-100 placeholder:text-blue-300 border border-blue-800"
+              required
+              value={newsletterEmail}
+              onChange={e => setNewsletterEmail(e.target.value)}
+              disabled={newsletterSubmitting}
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-800 transition"
+              disabled={newsletterSubmitting}
+            >
+              {newsletterSubmitting ? "Subscribing..." : "Subscribe"}
+            </button>
+            {newsletterSuccess && <div className="text-green-400 mt-2 w-full">{newsletterSuccess}</div>}
+            {newsletterError && <div className="text-red-400 mt-2 w-full">{newsletterError}</div>}
           </form>
         </div>
       </section>
