@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaMagnet, FaShoppingCart, FaBullhorn } from "react-icons/fa";
 
 const clientLogos = [
@@ -85,6 +85,22 @@ const socials = [
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        setShowNav(false); // scrolling down
+      } else {
+        setShowNav(true); // scrolling up
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -95,11 +111,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#070e25] text-blue-100 flex flex-col font-[family-name:var(--font-geist-sans)]">
       {/* Sticky Navbar */}
-      <nav className="sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm w-full animate-fade-in-down">
+      <nav className={`sticky top-0 z-30 bg-[#101a3c]/90 backdrop-blur shadow-sm w-full animate-fade-in-down transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex items-center justify-between max-w-6xl mx-auto px-2 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/silverlogo.PNG" alt="Tiberius Logo" width={40} height={40} className="h-10 w-10 object-contain" />
-            <span className="font-bold text-lg text-blue-100 hidden sm:inline">Tiberius</span>
+            <Image src="/silverlogo.PNG" alt="Tiberius Logo" width={41} height={41} className="h-[41px] w-[41px] object-contain" />
+            <span className="hidden sm:inline text-blue-100 font-cinzel font-extrabold text-3xl tracking-wide uppercase" style={{ fontFamily: 'Cinzel, serif', letterSpacing: '0.1em' }}>TIBERIUS</span>
           </Link>
           <button className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation" onClick={() => setNavOpen((o) => !o)}>
             <svg className="w-7 h-7 text-blue-100" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
