@@ -348,7 +348,7 @@ export default function Home() {
               />
               <input
                 type="tel"
-                placeholder="Your Phone (optional)"
+                placeholder="Your Phone"
                 className="w-full max-w-md px-4 py-3 rounded bg-white text-gray-900"
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
