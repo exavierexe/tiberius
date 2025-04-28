@@ -311,8 +311,12 @@ export default function Home() {
                   setEmail("");
                   setPhone("");
                   setMessage("");
-                } catch (err: any) {
-                  setError(err.message || "Submission failed");
+                } catch (err: unknown) {
+                  let errorMsg = "Submission failed";
+                  if (err && typeof err === "object" && "message" in err && typeof (err as any).message === "string") {
+                    errorMsg = (err as any).message;
+                  }
+                  setError(errorMsg);
                 } finally {
                   setSubmitting(false);
                 }
