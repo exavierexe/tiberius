@@ -100,6 +100,7 @@ const socials = [
 ];
 
 import FAQItem from "./FAQItem";
+import BrandMarquee from "./BrandMarquee";
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -183,15 +184,7 @@ export default function Home() {
   <div className="max-w-5xl mx-auto flex flex-col items-center">
     <span className="uppercase text-xs text-blue-300 tracking-widest mb-2">Brands We’ve Helped</span>
     {/* Mobile: Animated infinite carousel */}
-    <div className="relative w-full overflow-hidden sm:hidden">
-      <div className="flex animate-marquee gap-8 items-center opacity-80 whitespace-nowrap" style={{ animationDuration: '30s' }}>
-        {clientLogos.concat(clientLogos).map((logo, i) => (
-          <div key={i} className="inline-block min-w-[100px] min-h-[40px] flex-shrink-0">
-            <Image src={logo} alt="Client logo" width={100} height={40} className="object-contain grayscale hover:grayscale-0 transition" />
-          </div>
-        ))}
-      </div>
-    </div>
+    <BrandMarquee logos={clientLogos} />
     {/* Desktop: Static flex-wrap grid */}
     <div className="hidden sm:flex flex-wrap justify-center gap-8 items-center opacity-80 w-full">
       {clientLogos.map((logo, i) => (
