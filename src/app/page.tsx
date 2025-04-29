@@ -486,7 +486,6 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-4 bg-blue-950 text-blue-100 text-center text-sm">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-2 mb-2">
-          <span> {new Date().getFullYear()} Tiberius Digital Marketing, Auckland NZ</span>
           <span>© {new Date().getFullYear()} Tiberius Digital Marketing, Auckland NZ</span>
           <span className="hidden sm:inline">|</span>
           <a href="#" className="hover:underline">Privacy Policy</a>
