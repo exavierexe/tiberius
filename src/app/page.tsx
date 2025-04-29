@@ -180,16 +180,29 @@ export default function Home() {
 
       {/* Brands We’ve Helped */}
       <section className="py-8 px-4 bg-[#101a3c] animate-fade-in-up" id="brands">
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <span className="uppercase text-xs text-blue-300 tracking-widest mb-2">Brands We’ve Helped</span>
-          <div className="flex flex-wrap justify-center gap-8 items-center opacity-80">
-            {clientLogos.map((logo, i) => (
-              <Image key={i} src={logo} alt="Client logo" width={100} height={40} className="object-contain grayscale hover:grayscale-0 transition" />
-            ))}
+  <div className="max-w-5xl mx-auto flex flex-col items-center">
+    <span className="uppercase text-xs text-blue-300 tracking-widest mb-2">Brands We’ve Helped</span>
+    <div className="relative w-full overflow-hidden">
+      <div className="flex animate-marquee gap-8 items-center opacity-80 whitespace-nowrap" style={{ animationDuration: '30s' }}>
+        {clientLogos.concat(clientLogos).map((logo, i) => (
+          <div key={i} className="inline-block">
+            <Image src={logo} alt="Client logo" width={100} height={40} className="object-contain grayscale hover:grayscale-0 transition" />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
+<style jsx global>{`
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee linear infinite;
+  }
+`}</style>
 
       {/* Services Section */}
       <section className="py-20 px-4 bg-[#101a3c]" id="services">
