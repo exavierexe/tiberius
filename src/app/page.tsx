@@ -100,7 +100,6 @@ const socials = [
 ];
 
 import FAQItem from "./FAQItem";
-import BrandMarquee from "./BrandMarquee";
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
