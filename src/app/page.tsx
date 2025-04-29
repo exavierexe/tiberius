@@ -172,9 +172,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center bg-gradient-to-br from-[#101a3c] to-[#16224a] animate-fade-in">
+        <div className="mb-6 flex justify-center">
+          <span className="rounded-full border border-blue-200 bg-blue-200/10 px-6 py-2 text-xs font-semibold tracking-wide text-blue-200 backdrop-blur-sm">
+            ATTENTION &middot; AMBITIOUS NZ BRANDS
+          </span>
+        </div>
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-blue-100 drop-shadow-lg">Start Scaling Your Revenue & Profits With Proven Digital Marketing Strategies</h1>
         <h2 className="text-xl sm:text-2xl font-medium text-blue-200 mb-6">We Deliver Data-driven Campaigns and Measurable Results</h2>
-        <p className="max-w-xl mx-auto mb-8 text-blue-200">Are you struggling with low conversion rates or wasted ad spend? Unlock your brand’s full potential with the digital marketing partner trusted by New Zealand’s fastest-growing businesses. Our data-driven strategies and creative firepower deliver up to 10x ROI in 90 days.</p>
+        <p className="max-w-xl mx-auto mb-8 text-blue-200 text-left">Are you struggling with low conversion rates or wasted ad spend? Unlock your brand’s full potential with the digital marketing partner trusted by New Zealand’s fastest-growing businesses. Our data-driven strategies and creative firepower deliver up to 10x ROI in 90 days.</p>
         <a href="#contact" className="inline-block px-8 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-800 transition">Book a Free Strategy Call</a>
       </section>
 
