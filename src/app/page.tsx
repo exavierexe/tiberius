@@ -382,7 +382,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-blue-900 text-white" id="contact">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-6">Contact Us</h3>
-          <p className="mb-8">Let’s discuss how Tiberius can help your business grow. Fill out the form below and our team will be in touch within 24 hours.</p>
+          <p className="mb-8">Let’s discuss how we can help your business grow. Fill out the form below and our team will be in touch within 24 hours.</p>
             <form
               className="flex flex-col gap-4 items-center"
               onSubmit={async (e) => {
